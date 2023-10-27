@@ -1,0 +1,19 @@
+name: srl-tls
+
+mgmt:
+  network: srl-tls
+  ipv4-subnet: 172.20.20.0/24
+
+topology:
+  kinds:
+    srl:
+      image: ghcr.io/nokia/srlinux
+  nodes:
+    srl1:
+      kind: srl
+      startup-config: configs/srl1.cfg
+      mgmt-ipv4: 172.20.20.21
+    srl2:
+      kind: srl
+      startup-config: configs/srl2.cfg
+      mgmt-ipv4: 172.20.20.22
